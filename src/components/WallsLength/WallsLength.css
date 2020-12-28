@@ -1,0 +1,24 @@
+.block_walls_style {
+    border: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em;
+}
+
+.walls_question_style {
+    background: #eeefef;
+    color: darkblue;
+    padding: 0.5em;
+    font-size: 150%
+}
+
+.walls_building_style {
+    padding: 2em;
+}
+
+.input_style{
+    font-size: 1.2em;
+ height: 2.1em;
+    width: 8em;
+    margin: 1em;
+}

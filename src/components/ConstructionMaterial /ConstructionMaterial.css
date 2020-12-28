@@ -1,0 +1,32 @@
+.button_style {
+    padding: 10px 32px;
+    border-radius: 0.7em;
+    margin-top: 1em;
+    margin-left: 1em;
+    font-size: 100%;
+}
+
+a {
+    color: forestgreen;
+}
+
+.block_material_style {
+    border: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em;
+}
+
+.question_material_style {
+    background: #eeefef;
+    color: darkblue;
+    padding: 0.5em;
+    font-size: 150%
+}
+
+.material_style {
+    padding: 0.5em;
+    font-size: 125%;
+    text-align: left;
+}
+

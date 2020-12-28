@@ -1,0 +1,32 @@
+
+.block_material_style {
+    border: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em;
+}
+
+.question_material_style {
+    background: #eeefef;
+    color: darkblue;
+    padding: 0.5em;
+    font-size: 150%
+}
+
+.material_style {
+    padding: 0.5em;
+    font-size: 125%;
+    text-align: left;
+}
+
+.err_style {
+    color: red;
+    padding: 2em;
+    text-align: center
+}
+
+.norm_answer_style {
+    color: darkblue;
+    padding: 2em;
+    text-align: center
+}
