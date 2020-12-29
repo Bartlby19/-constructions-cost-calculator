@@ -6,6 +6,13 @@ import {resetValue} from "../redux/actions";
 
 export default () => {
     const dispatch = useDispatch();
+    const materials = useSelector(state => state.app.typeOfChosenMaterials)
+    let showMaterials = [];
+    for (let key in materials) {
+        showMaterials.push(
+            <li><Link to="/size">{materials[key]}</Link></li>
+        )
+    }
     return (
         <div>
             <div className="block_material_style">
@@ -15,12 +22,9 @@ export default () => {
                     </div>
                     <div className="material_style">
                         <ul>
-                            <li><a href="">Жилой дом</a></li>
-                            кирпич,
-                            шлакоблок, деревянный брус
-                            <li><a href="">Гараж</a></li>
-                            шлакоблок, металл, сендвич-панели.
+                            {showMaterials}
                         </ul>
+
                     </div>
                 </div>
             </div>

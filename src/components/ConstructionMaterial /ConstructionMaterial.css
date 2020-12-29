@@ -6,7 +6,7 @@
     font-size: 100%;
 }
 
-a {
+.li_style {
     color: forestgreen;
 }
 
@@ -24,9 +24,4 @@ a {
     font-size: 150%
 }
 
-.material_style {
-    padding: 0.5em;
-    font-size: 125%;
-    text-align: left;
-}
 
