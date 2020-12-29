@@ -1,10 +1,11 @@
 import React from "react";
 import "./ConstructionMaterial.css"
 import {useDispatch, useSelector} from "react-redux";
+import {Link} from "react-router-dom";
+import {resetValue} from "../redux/actions";
 
 export default () => {
     const dispatch = useDispatch();
-    const step = useSelector(state => state.app.step)
     return (
         <div>
             <div className="block_material_style">
@@ -24,9 +25,17 @@ export default () => {
                 </div>
             </div>
             <div className="button_style">
-                <button>Отмена</button>
-                <button>Далее</button>
+                <Link to="/">
+                    <button onClick={() => {
+                        dispatch(resetValue())
+                    }}>Отмена
+                    </button>
+                </Link>
+                <Link to="size">
+                    <button>Далее</button>
+                </Link>
             </div>
         </div>
     )
 }
+

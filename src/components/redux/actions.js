@@ -1,24 +1,32 @@
-import {STEP_INCREMENT} from "./types";
+import {STEP_INCREMENT, RESET_VALUE, FLOORS_AMOUNT, TYPE_STRUCTURE} from "./types";
 
-export function createPost(step) {
+export function changeStep() {
     return {
-        type: STEP_INCREMENT,
-        payload: step+1
+        type: STEP_INCREMENT
     }
 }
 
-// export function showLoader() {
-//     return {
-//         type: SHOW_LOADER
-//     }
-// }
-//
-// export function hideLoader() {
-//     return {
-//         type: HIDE_LOADER
-//     }
-// }
-//
+export function resetValue() {
+    return {
+        type: RESET_VALUE
+    }
+}
+
+export function changeFloorsAmount(amount) {
+    return {
+        type: FLOORS_AMOUNT,
+        payload: Number(amount)
+    }
+}
+
+export function getTypeOfStructure(type) {
+    return {
+        type: TYPE_STRUCTURE,
+        payload: type
+    }
+}
+
+
 // export function showAlert(text) {
 //     return dispatch => {
 //         dispatch({

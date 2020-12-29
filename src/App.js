@@ -7,7 +7,7 @@ import BuildingChoice from "./components/BuildingChoice/BuildingChoice";
 import ConstructionMaterial from "./components/ConstructionMaterial /ConstructionMaterial";
 import FloorsNumber from "./components/FloorsNumber/FloorsNumber";
 import Result from "./components/Result/Result";
-import WallsLength from "./components/WallsLength/WallsLength";
+import WallsLength from "./components/WallsSize/WallsSize";
 
 import {createBrowserHistory} from "history";
 const history = createBrowserHistory();
@@ -21,7 +21,7 @@ class App extends React.Component {
                 <Route exact path='/' render={() => <BuildingChoice/>}/>
                 <Route exact path='/floors' render={() => <FloorsNumber/>}/>
                 <Route exact path='/material' render={() => <ConstructionMaterial/>}/>
-                <Route exact path='/length' render={() => <WallsLength/>}/>
+                <Route exact path='/size' render={() => <WallsLength/>}/>
                 <Route exact path='/result' render={() => <Result/>}/>
             </div>
             </Router>

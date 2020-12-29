@@ -1,10 +1,12 @@
 import React from "react";
-import "./WallsLength.css"
-import {useDispatch, useSelector} from "react-redux";
+import "./WallsSize.css"
+import {useDispatch} from "react-redux";
+import {Link} from "react-router-dom";
+import {resetValue} from "../redux/actions";
 
 export default () => {
     const dispatch = useDispatch();
-    const step = useSelector(state => state.app.step)
+
     return (
         <div>
             <div className="block_walls_style">
@@ -20,8 +22,15 @@ export default () => {
                 </div>
             </div>
             <div>
-                <button>Отмена</button>
-                <button>Далее</button>
+                <Link to="/">
+                    <button onClick={() => {
+                        dispatch(resetValue())
+                    }}>Отмена
+                    </button>
+                </Link>
+                <Link to='/result'>
+                <button>Рассчитать</button>
+                </Link>
             </div>
         </div>
     )

@@ -1,11 +1,19 @@
 import React from "react";
 import "./BuildingChoice.css"
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {changeStep, getTypeOfStructure} from "../redux/actions";
+import {Link} from 'react-router-dom'
 
 export default () => {
     const dispatch = useDispatch();
-    const step = useSelector(state => state.app.step)
-    return (
+
+    function handleInputOnClick(event) {
+        const target = event.target
+        const name = target.name
+        dispatch(changeStep())
+        dispatch(getTypeOfStructure(name))
+    }
+        return (
         <div>
             <div className="block_material_style">
                 <div>
@@ -14,8 +22,8 @@ export default () => {
                     </div>
                     <div className="material_style">
                         <ul>
-                            <li><a href="">Жилой дом</a></li>
-                            <li><a href="">Гараж</a></li>
+                            <li><Link to="/floors" name="house"   onClick={handleInputOnClick}>Жилой дом</Link></li>
+                            <li><Link to="/material" name="garage" onClick={handleInputOnClick}>Гараж</Link></li>
                         </ul>
                     </div>
                 </div>
