@@ -3,4 +3,4 @@ export const RESET_VALUE = "APP/RESET_VALUE";
 export const FLOORS_AMOUNT = "APP/FLOORS_AMOUNT";
 export const TYPE_STRUCTURE = "APP/TYPE_STRUCTURE";
 export const TYPE_MATERIAL = "APP/TYPE_MATERIAL";
-// export const HIDE_ALERT = "APP/HIDE_ALERT";
+export const RESULT = "APP/RESULT";

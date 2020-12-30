@@ -1,4 +1,4 @@
-import {STEP_INCREMENT, RESET_VALUE, FLOORS_AMOUNT, TYPE_STRUCTURE, TYPE_MATERIAL} from "./types";
+import {STEP_INCREMENT, RESET_VALUE, FLOORS_AMOUNT, TYPE_STRUCTURE, TYPE_MATERIAL, RESULT} from "./types";
 
 export function changeStep() {
     return {
@@ -33,33 +33,15 @@ export function getChosenMaterial(type) {
     }
 }
 
-
-// export function showAlert(text) {
-//     return dispatch => {
-//         dispatch({
-//             type: SHOW_ALERT,
-//             payload: text
-//         });
-//         setTimeout(() => {
-//             dispatch(hideAlert())
-//         }, 3000)
-//     }
-// }
-//
-// export function hideAlert() {
-//     return {
-//         type: HIDE_ALERT
-//     }
-// }
-//
-// export function fetchPost() {
-//     return async dispatch => {
-//         dispatch(showLoader())
-//         const response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
-//         const json = await response.json();
-//         dispatch({type: FETCH_POSTS, payload: json})
-//         dispatch(hideLoader())
-//
-//     }
-//
-// }
+export function getResult(state, length, height) {
+    const building = state.typOfChosenStructure;
+    const floors = state.floorsAmount;
+    const material = state.chosenMaterial;
+    return async dispatch => {
+        const response = await fetch(`https://data.techart.ru/lab/json/?building=${building}&height=${floors}` +
+            `&material=${material}&sizex=${Number(length)}&sizey=${Number(height)}`)
+        const json = await response.json();
+        console.log(json)
+        dispatch({type: RESULT, payload: json})
+    }
+}

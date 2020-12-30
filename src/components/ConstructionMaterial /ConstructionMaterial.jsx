@@ -43,7 +43,7 @@ const ConstructionMaterial = () => {
                     }}>Отмена
                     </button>
                 </Link>
-                <Link to="size">
+                <Link>
                     <button>Далее</button>
                 </Link>
             </div>

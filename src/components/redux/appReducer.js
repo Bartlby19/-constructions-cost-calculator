@@ -1,4 +1,4 @@
-import {STEP_INCREMENT, RESET_VALUE, FLOORS_AMOUNT, TYPE_STRUCTURE, TYPE_MATERIAL} from "./types";
+import {STEP_INCREMENT, RESET_VALUE, FLOORS_AMOUNT, TYPE_STRUCTURE, TYPE_MATERIAL, RESULT} from "./types";
 
 const initialState = {
     showStep: true,
@@ -20,6 +20,7 @@ const initialState = {
     },
     typeOfChosenMaterials: "",
     chosenMaterial: "",
+    result: ""
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -35,17 +36,23 @@ export const appReducer = (state = initialState, action) => {
                 showStep: true,
                 typOfChosenStructure: "",
                 typeOfChosenMaterials: "",
-                chosenMaterial: ""
+                chosenMaterial: "",
+                result: ""
             }
         case FLOORS_AMOUNT:
             return {...state, floorsAmount: action.payload}
         case TYPE_MATERIAL:
-            return {...state, chosenMaterial: action.payload}
+            return {...state, chosenMaterial: Number(action.payload)}
         case TYPE_STRUCTURE:
             return {
                 ...state,
                 typeOfChosenMaterials: state.materials[action.payload],
                 typOfChosenStructure: state.typOfStructures[action.payload]
+            }
+        case RESULT:
+            return {
+                ...state,
+                result: action.payload
             }
         default:
             return state

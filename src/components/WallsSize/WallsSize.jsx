@@ -1,14 +1,20 @@
 import React, {useEffect, useState} from "react";
 import "./WallsSize.css"
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
-import {resetValue} from "../redux/actions";
+import {resetValue, getResult} from "../redux/actions";
 
 const WallsSize = () => {
+
     const dispatch = useDispatch();
+    const state = useSelector(state => state.app)
     const [wallLength, setWallLength] = useState("");
     const [wallHeight, setWallHeight] = useState("");
     const [disable, setDisable] = useState(true);
+
+    function onClickGetResult() {
+        dispatch(getResult(state, wallLength, wallHeight))
+    }
 
     function handleInputChange(event) {
         const target = event.target
@@ -22,13 +28,14 @@ const WallsSize = () => {
     }
 
     useEffect(() => {
-        let exist = (!!wallLength && !!wallHeight);
-        if (exist && Number(wallLength) >= 1 && Number(wallHeight) >= 1) {
+        const exist = (!!wallLength && !!wallHeight);
+        if
+        (exist && Number(wallLength) >= 1 && Number(wallHeight) >= 1) {
             setDisable(false)
         } else {
             setDisable(true)
         }
-    });
+    }, [wallLength, wallHeight]);
 
     return (
         <div>
@@ -56,7 +63,7 @@ const WallsSize = () => {
                     </button>
                 </Link>
                 <Link to='/result'>
-                    <button disabled={disable}>Рассчитать</button>
+                    <button onClick={onClickGetResult} disabled={disable}>Рассчитать</button>
                 </Link>
             </div>
         </div>
