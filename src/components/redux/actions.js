@@ -1,4 +1,4 @@
-import {STEP_INCREMENT, RESET_VALUE, FLOORS_AMOUNT, TYPE_STRUCTURE} from "./types";
+import {STEP_INCREMENT, RESET_VALUE, FLOORS_AMOUNT, TYPE_STRUCTURE, TYPE_MATERIAL} from "./types";
 
 export function changeStep() {
     return {
@@ -22,6 +22,13 @@ export function changeFloorsAmount(amount) {
 export function getTypeOfStructure(type) {
     return {
         type: TYPE_STRUCTURE,
+        payload: type
+    }
+}
+
+export function getChosenMaterial(type) {
+    return {
+        type: TYPE_MATERIAL,
         payload: type
     }
 }

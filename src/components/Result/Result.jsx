@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import {resetValue} from "../redux/actions";
 
-export default () => {
+const Result = () => {
     const dispatch = useDispatch();
     return (
         <div>
@@ -29,3 +29,5 @@ export default () => {
         </div>
     )
 }
+
+export default Result

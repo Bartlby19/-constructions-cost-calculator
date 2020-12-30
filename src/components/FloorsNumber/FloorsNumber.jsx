@@ -4,7 +4,7 @@ import {changeFloorsAmount, changeStep, resetValue} from "../redux/actions";
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 
-export default () => {
+const FloorsNumber = () => {
     const dispatch = useDispatch();
     const [floorsAmount, setFloors] = useState(1);
     const [disable, setDisable] = useState(true);
@@ -49,3 +49,4 @@ export default () => {
         </div>
     )
 }
+export default FloorsNumber

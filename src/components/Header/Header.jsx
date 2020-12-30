@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css"
 import {useSelector} from "react-redux";
 
-export default () => {
+const Header = () => {
     const step = useSelector(state => state.app.step)
     const showStep = useSelector(state => state.app.showStep)
     const stepDisplay = `Шаг ${step}`;
@@ -18,3 +18,5 @@ export default () => {
         </div>
     )
 }
+
+export default Header

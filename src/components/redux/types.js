@@ -2,5 +2,5 @@ export const STEP_INCREMENT = "APP/STEP_INCREMENT";
 export const RESET_VALUE = "APP/RESET_VALUE";
 export const FLOORS_AMOUNT = "APP/FLOORS_AMOUNT";
 export const TYPE_STRUCTURE = "APP/TYPE_STRUCTURE";
-// export const SHOW_ALERT = "APP/SHOW_ALERT";
+export const TYPE_MATERIAL = "APP/TYPE_MATERIAL";
 // export const HIDE_ALERT = "APP/HIDE_ALERT";

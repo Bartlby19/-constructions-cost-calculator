@@ -2,17 +2,25 @@ import React from "react";
 import "./ConstructionMaterial.css"
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
-import {resetValue} from "../redux/actions";
+import {changeStep, getChosenMaterial, resetValue} from "../redux/actions";
 
-export default () => {
+const ConstructionMaterial = () => {
     const dispatch = useDispatch();
     const materials = useSelector(state => state.app.typeOfChosenMaterials)
     let showMaterials = [];
     for (let key in materials) {
         showMaterials.push(
-            <li><Link to="/size">{materials[key]}</Link></li>
+            <li key={key}><Link to="/size" name={key} onClick={handleInputOnClick}>{materials[key]}</Link></li>
         )
     }
+
+    function handleInputOnClick(event) {
+        const target = event.target
+        const name = target.name
+        dispatch(changeStep())
+        dispatch(getChosenMaterial(name))
+    }
+
     return (
         <div>
             <div className="block_material_style">
@@ -43,3 +51,4 @@ export default () => {
     )
 }
 
+export default ConstructionMaterial

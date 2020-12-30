@@ -1,4 +1,4 @@
-import {STEP_INCREMENT, RESET_VALUE, FLOORS_AMOUNT, TYPE_STRUCTURE} from "./types";
+import {STEP_INCREMENT, RESET_VALUE, FLOORS_AMOUNT, TYPE_STRUCTURE, TYPE_MATERIAL} from "./types";
 
 const initialState = {
     showStep: true,
@@ -39,6 +39,8 @@ export const appReducer = (state = initialState, action) => {
             }
         case FLOORS_AMOUNT:
             return {...state, floorsAmount: action.payload}
+        case TYPE_MATERIAL:
+            return {...state, chosenMaterial: action.payload}
         case TYPE_STRUCTURE:
             return {
                 ...state,

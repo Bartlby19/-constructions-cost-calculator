@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {changeStep, getTypeOfStructure} from "../redux/actions";
 import {Link} from 'react-router-dom'
 
-export default () => {
+ const BuildingChoice=() => {
     const dispatch = useDispatch();
 
     function handleInputOnClick(event) {
@@ -35,3 +35,5 @@ export default () => {
         </div>
     )
 }
+
+export default BuildingChoice
