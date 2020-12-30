@@ -23,7 +23,7 @@ const WallsSize = () => {
 
     useEffect(() => {
         let exist = (!!wallLength && !!wallHeight);
-        if (exist) {
+        if (exist && Number(wallLength) >= 1 && Number(wallHeight) >= 1) {
             setDisable(false)
         } else {
             setDisable(true)
